@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+population_density_*.html
+.DS_Store
+.env
