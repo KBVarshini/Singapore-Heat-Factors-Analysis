@@ -17,23 +17,31 @@ var singaporeBoundary = ee.Geometry.Polygon([
   // Filter the image collection using Landsat 8 imagery by date and location, which is Singapore.
   // So the time range is 1/1/2015 to 31/12/2022 for the data collection. This is the latest dataset.
   // The, sort by the cloud cover, to get accurate results.
-  var collection = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')
+  // NOTE: Google retired Landsat Collection 1 (LANDSAT/LC08/C01/T1_SR), which this project originally used.
+  // This now uses Collection 2, Level 2 surface reflectance. Its bands are named SR_B1 ... SR_B7
+  // and its raw values must be scaled to reflectance (0 to 1) first (see the .map() step below).
+  var collection = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2')
 
   //Apply the filter .filterBounds(singaporeBoundary) to the collection of satellite pictures, 
   // it's like telling the satellite, "Show me only the pictures that cover the area inside the 
   // shape we drew around Singapore."
     .filterBounds(singaporeBoundary) 
     .filterDate('2015-01-01', '2022-12-31') // Filter the collection by date range
-    .sort('CLOUD_COVER'); //Sort the collection to avoid Cloud Cover
+    .sort('CLOUD_COVER') //Sort the collection to avoid Cloud Cover
+    // Convert raw Collection 2 pixel values to surface reflectance.
+    .map(function(image) {
+      var optical = image.select('SR_B.').multiply(0.0000275).add(-0.2);
+      return image.addBands(optical, null, true);
+    });
   
   // Create a method/function to calculate NDVI, Normalized Difference Vegetation Index.
-  // B5 & B4 are the band names and we are matching them to their corresponding images.
+  // SR_B5 & SR_B4 (near-infrared & red) are the band names and we are matching them to their corresponding images.
   // The image will be renamed to NDVI.
 
   //Bands = different channels of data, each representing specific portions of electromagnetic spectrum
   // & combining information from multiple bands allows us to analyze + extract valuable insights about the Earth's surface and its features in remote sensing.
   var calculateNDVI = function(image) {
-    var ndvi = image.normalizedDifference(['B5', 'B4']).rename('NDVI');
+    var ndvi = image.normalizedDifference(['SR_B5', 'SR_B4']).rename('NDVI');
     return image.addBands(ndvi);
   };
   
@@ -49,7 +57,7 @@ var singaporeBoundary = ee.Geometry.Polygon([
   // This is to exclude the water bodies when the map is displayed. 
   // Data collection should only be focused on the land area.
   var calculateMNDWI = function(image) {
-    var mndwi = image.normalizedDifference(['B3', 'B6']).rename('MNDWI');
+    var mndwi = image.normalizedDifference(['SR_B3', 'SR_B6']).rename('MNDWI');
     return image.addBands(mndwi);
   };
   
@@ -225,4 +233,3 @@ var boundaryImage = ee.Image().byte();
   // This displays the map and the chart below. 
   // Users can expand the chart for a better view and hover to see its values too.
   ui.root.widgets().reset([mainPanel]);
-  
