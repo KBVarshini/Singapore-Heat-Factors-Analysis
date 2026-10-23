@@ -1,8 +1,10 @@
 # Singapore Heat Factors Analysis: Vending Machine Site Selection
 
+<img src="website/images/RP_Logo.png" alt="Republic Polytechnic" width="220"> 
+
 **Project By: Brunda Varshini Katapalli** (group of 4 members)
 
-A Diploma in IT, Republic Polytechnic Final Year Project (2023) for an industry partner. The wider project aimed to **develop a footfall sensor** (Raspberry Pi camera) that detects foot traffic for vending machines, and to combine it with environmental and local data (land surface temperature, weather, population, vegetation cover, crime rates and hawker centres), all stored on AWS and shown on a user-friendly website. Based on this data, the client decides **where to sell his sugarcane drinks**: The hottest and busiest parts of Singapore, where people want a cold drink.
+A Diploma in IT Final Year Project (2023) for an industry partner. The wider project aimed to **develop a footfall sensor** (Raspberry Pi camera) that detects foot traffic for vending machines, and to combine it with environmental and local data (land surface temperature, weather, population, vegetation cover, crime rates and hawker centres), all stored on AWS and shown on a user-friendly website. Based on this data, the client decides **where to sell his sugarcane drinks**: The hottest and busiest parts of Singapore, where people want a cold drink.
 
 **This repository contains only my part**: 2 of the factors that influence how hot an area is, **vegetation cover** and **population**, plus the website that presented them. The rest of the team worked on the footfall sensor, land surface temperature, weather, crime and hawker centre data.
 
