@@ -1,4 +1,5 @@
 # Singapore Heat Factors Analysis: Vending Machine Site Selection
+# Republic Polytechnic
 
 **Project By: Brunda Varshini Katapalli** (group of 4 members)
 
