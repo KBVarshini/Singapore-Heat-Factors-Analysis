@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Vegetation Cover Page</title>
+    <style>
+        /* Styling the webpage with CSS */
+        
+        /* Choosing the right font that suits the webpage */
+        /* Making sure the video covers the entire background area without repetition */
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Styling the video container */
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        /* Styling the video element */
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Styling the Header */
+        header {
+            padding: 10px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 20px; /* Increased margin-top to create space */
+            margin-bottom: 20px; /*Creates a gap of between the Welcome header & the Navigation bar. */
+            border-radius: 60px;
+            box-shadow: 0 25px 25px rgba(0, 0, 0, 0.244);
+
+        }
+        
+        /* Styling the Webpage title, WELCOME TO VEGETATION COVER PAGE ! */
+        h1 {
+            margin: 0;
+            color: #ffffff;
+            font-family: Verdana, Geneva, 'Tahoma', sans-serif;
+            font-size: 30px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        /* Styling container for the Vegetation Cover */
+        .welcome {
+          background-color: rgba(235, 228, 245, 0.774);;
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 30px; 
+          max-width: 900px;
+          margin: 20px auto;
+          padding: 20px;
+          box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+          border: 2px solid #000;
+        }
+
+        
+        /* Styling the font & colour for Vegetation Cover. */
+        .welcome h2 {
+            color: #5c1f09;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align:center;
+        }
+        
+        /* Styling the paragraphs/content under Vegetation Cover heading. */
+        .welcome p, .task-description p {
+            color: #000000;
+            line-height: 1.8;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+         /* Styling for the Map Animation heading */
+         .map-animation h2 {
+            color: #5c1f09;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align:center;
+        }
+
+        /* Styling for the Map Animation container */
+        .map-animation {
+          background-color: rgba(235, 228, 245, 0.774);;
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 30px; 
+          max-width: 900px;
+          margin: 20px auto;
+          padding: 20px;
+          box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+          border: 2px solid #000;
+        }
+
+        /* Styling for the Singapore Map heading */
+        .singapore-map h2 {
+            color: #5c1f09;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align:center;
+        }
+
+         /* Styling for the Singapore Map container */
+         .singapore-map {
+          background-color: rgba(235, 228, 245, 0.774);;
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 30px; 
+          max-width: 1000px;
+          margin: 20px auto;
+          padding: 20px;
+          box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+          border: 2px solid #000;
+        }
+        
+        /* Styling for the waeningmessage, below the interactive map */
+        .warning-message {
+          background-color: rgba(247, 223, 216, 0.774);;
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 50px; 
+          max-width: 1000px;
+          margin: 20px auto;
+          padding: 20px;
+          box-shadow: 0 10px 8px rgba(235, 205, 205, 0.737);
+          border: 2px solid #d51c1c;
+          text-align: justify;
+        }
+        .chartContainer {
+            width: 80%;
+            height: 400px;
+            margin: 20px auto;
+}
+
+        /* Styling the Navigation Bar */
+        .navbar {
+            background-color: #aac2ff9d;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Styling the Navigation Bar unordered list */
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        /* Styling the Navigation bar list items */
+        .navbar li {
+            float: left;
+        }
+        
+        /* Styling the navigation bar links, Home, Population Density & Vegetation Cover. */
+        .navbar li a {
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        /* Styling the navigation bar links on hover */
+        .navbar li a:hover {
+            background-color: #eaa1bb;
+        }
+
+        /* Styling the active link in the navigation bar */
+        .navbar li a.active {
+          background-color: #fefefe;
+          color: #000000;
+        }
+
+        /* Styling the logo in the navigation bar */
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        /* Styling the user ID text */
+        .name {
+            font-size: 14px;
+            color: #000000;
+        }
+
+        /* Styling the signature section */
+       .signature {
+            text-align: right;
+            margin-top: 30px;
+            margin-right: 15px;
+            color: #000000;
+            font-size: 14px;
+            font-family:cursive;
+            
+        }
+
+        .map-button {
+            background-color: #f3e5ac; /* Green */
+            border: 2px solid #000; /* Add a 2px black border */
+            color: rgb(0, 0, 0);
+            padding: 12px 28px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: inherit;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* The box shadow */
+            cursor: pointer;
+            border-radius: 100px;
+}
+
+       .map-button:hover {
+            background-color: #fdfdfd; /* Changes the background color on hover */
+            border-color: #000000; /* Changes the border color on hover */
+}
+
+  /* Center the table horizontally */
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+        }
+
+         /* Style table HEADER cells */
+         th {
+            background-color: #d6f2f8;
+            text-align:center;
+            padding: 8px;
+        }
+
+        /* Style table DATA cells */
+        td {
+            padding: 8px;
+        }
+
+        /* Style table ROWS */
+        tr {
+            background-color: #e9efe5;
+            text-align:center;
+            padding: 8px;
+
+        }
+
+    </style>
+<style></style><style>
+  /* Replaces the original background video */
+  body { background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%) fixed; min-height: 100vh; }
+</style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <ul>
+            <!--Links for redirection at the navigation bar. 
+            When user clicks on PopulationDensity, they should be redirected to another page to view the map.-->
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="PopulationDensity.html">Population Density</a></li>
+            <li><a href="VegetationCover.html" class="active">Vegetation Cover</a></li>
+        </ul>
+
+        <!-- Author tag -->
+        <div class="navbar-logo">
+            <span class="name"> Designed By: <b>VARSHINI</b> </span>
+        </div>
+    </div>
+
+    <header>
+        <h1>Welcome to Vegetation Cover Page!</h1>
+    </header>
+    <div class="welcome">
+        <h2><u>Vegetation Cover</u></h2>
+        <p>Vegetation cover represents the amount and distribution of greenery and vegetation within the country, 
+            in this case Singapore. It includes parks, gardens, and also man-made green spaces integrated into the 
+            urban landscape.
+            <br><br>
+            Singapore's focus on being a "City in a Garden" has led to the incorporation of vegetation to improve 
+            air quality, reduce heat, provide habitats, and enhance residents' well-being. Monitoring vegetation cover 
+            helps track changes and supports conservation and urban planning efforts.
+            <br><br>
+            To calculate the Vegetation Cover for different areas in Singapore, I am using the dataset from Google Earth Engine, 
+            using LandSat 8, which provides accurate data.
+        </p>
+    </div>
+
+    <div class="singapore-map" style="text-align: center;">
+      <h2><u>Singapore Map</u></h2>
+      <p>This is the Singapore Map that displays the levels of Vegetation Cover by the end of 2022, based on the colours. 
+    </p>
+
+        <p>The chart shows a trend of Vegetation Cover over the 7 years.
+            <br><br>
+
+            <span style="background-color: rgb(171, 243, 208);">
+            <b>Hover over the chart to view the NDVI values. Expand the chart for a better view.</b> 
+            <br> 
+            </span></p><p> 
+           <span style="color:rgb(0, 19, 128);font-weight:bolder">
+            </span></p><table border="2">
+                <tbody><tr>
+                    <th>NDVI Range (approx.)</th>
+                    <th>Land cover</th>
+                </tr>
+                <tr><td>Below 0</td><td>Water, clouds or snow (non-vegetated)</td></tr>
+                <tr><td>0 to 0.2</td><td>Bare soil, rock or built-up areas</td></tr>
+                <tr><td>0.2 to 0.5</td><td>Thin or moderate vegetation</td></tr>
+                <tr><td>Above 0.5</td><td>Dense, healthy vegetation</td></tr>
+            </tbody></table>
+            <br>
+            <br>
+
+            <a href="https://code.earthengine.google.com/8aa4f06bc2e3b366ca2baa9a91978bee">
+                <button class="map-button">Go to GEE Code Editor</button> </a>
+        <p></p>
+        <p></p>
+      <iframe src="https://katvarshini.users.earthengine.app/view/singapore-vegetation-cover-analysis" style="width: 100%; height: 600px"></iframe>
+      <br>
+
+      <p class="warning-message">
+        <img src="images/Warning_Symbol.png" alt="Warning Symbol" width="40" height="30">  
+        The limitation of using Landsat 8 satellite is that it takes pictures of large areas and each picture pixel 
+        covers a sizable region. When I tried to filter the pictures to show only Singapore, some neighbouring areas 
+        of Malaysia are still included in the map, because of the pixel size. Factors like clouds can hide parts of Singapore in 
+        some images. <b>Unfortunately, due to the satellite's limitations, we can't completely fix this issue using LandSat 8
+        and some data from outside Singapore may appear in the images</b>. However, the <b>line chart is accurate</b> as it only calculates 
+        the vegetation cover for Singapore and not any neighbouring parts.
+      </p>
+
+    </div>
+  
+      
+
+
+</body></html>

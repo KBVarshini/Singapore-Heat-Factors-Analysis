@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Population Density Page</title>
+    <style>
+        /* Styling the webpage with CSS */
+        
+        /* Choosing the right font that suits the webpage */
+        /* Making sure the video covers the entire background area without repetition */
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Styling the video container */
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        /* Styling the video element */
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Styling the WELCOME Header */
+        header {
+            padding: 10px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            margin-top: 20px; /* Increased margin-top to create space */
+            margin-bottom: 20px; /*Creates a gap of between the Welcome header & the Navigation bar. */
+            border-radius: 60px;
+            box-shadow: 0 25px 25px rgba(0, 0, 0, 0.244);
+
+        }
+        
+        /* Styling the Webpage title, WELCOME TO POPULATION DENSITY !  */
+        h1 {
+            margin: 0;
+            color: #ffffff;
+            font-family: Verdana, Geneva, 'Tahoma', sans-serif;
+            font-size: 30px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        /* Styling container for the Population Density introduction*/
+        .welcome {
+          background-color: rgba(235, 228, 245, 0.774);;
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 30px; 
+          max-width: 900px;
+          margin: 20px auto;
+          padding: 20px;
+          box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+          border: 2px solid #000;
+        
+        }
+
+
+        .container-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .map-container,
+        .map2-container {
+           background-color: rgba(235, 228, 245, 0.774);
+           padding: 20px;
+           border-radius: 10px;
+           margin-bottom: 30px;
+           margin-top: 2px ;
+           width: 800px; 
+           margin: 20px auto; /* Use auto to horizontally center the containers */
+           padding: 18px;
+           box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+           border: 5px solid #015eff85;
+           height: 400px; 
+
+           text-align: center; /* Center the text inside the containers */
+           position: relative; /* Enable relative positioning */
+        }
+
+
+        .map-container {
+            /*For the url, replace forward slash with backslash, because it sometimes can cause problems and url won't work.*/
+            background-image: url("images/Map_Normal_View.png");
+            /*Container will hold the full image, rather than stretching it to fill up the whole container */
+            background-size: contain; 
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 18px;
+            
+        }
+
+        .map2-container {
+            background-image: url("images/Map_Night_View.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 18px;
+            text-align: center;
+        }
+
+        /* Styling the "Normal Map View" & "Night Map View" headings */
+        .map-container h3,
+        .map2-container h3 {
+
+            top: 50%; /* Set the top position to center the box vertically */
+            
+            /*Allows us to move the element, in this case the heading, 
+            to its original position. It will take up the space in the webpage as it would normally. */
+            position: relative; 
+            left: 50%; /* Set the left position to center the box horizontally */
+            transform: translate(-50%, -50%); /* Center the box properly, Left,Right */
+
+            top: -32px; /* Adjust this value to move the heading above the image */
+            text-align: center; /* Aligns the heading to the center*/
+            border-radius: 120px ;
+            color: #0c0000;
+            font-family: Verdana, Geneva, 'Tahoma', sans-serif;
+           
+            /* Add padding to the headings for better visual appearance */
+            /*Height, Weight*/
+            padding: 10px 20px; 
+            background-color: rgba(243, 242, 202, 0.963);
+            box-shadow: 0 10px 8px rgba(11, 11, 11, 0.363);
+            border: 2px solid rgba(0, 2, 18, 0.963);
+            max-width: 200px;
+            
+        }
+
+        /* Styling the font & colour for Population Density. */
+        .welcome h2 {
+            color: #5c1f09;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align:center;
+        }
+        
+        /* Styling the paragraphs/content under Population Density heading. */
+        .welcome p{
+            color: #000000;
+            line-height: 1.8;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+         /* Styling the Navigation Bar */
+        .navbar {
+            background-color: #aac2ff9d;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Styling the Navigation Bar unordered list */
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        /* Styling the Navigation bar list items */
+        .navbar li {
+            float: left;
+        }
+        
+        /* Styling the navigation bar links, Home,Population Density & Vegetation Cover */
+        .navbar li a {
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+         /* Styling the active link in the navigation bar */
+         .navbar li a.active {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        /* Styling the navigation bar links on hover */
+        /* So when user hovers over the item on the nav. bar, it will display this colour.*/
+        .navbar li a:hover {
+            background-color: #eaa1bb;
+        }
+       
+
+        /* Styling the logo in the navigation bar */
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .introduction h2 {
+            color: #5c1f09;
+            font-size: 24px;
+            margin-bottom: 7px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        .introduction p {
+            color: #0c0000;
+            line-height: 1.8;
+            font-family: Verdana, Geneva, 'Tahoma', sans-serif;
+            text-align: center;
+        }
+        
+        
+        /* Styling the user ID text */
+        .name {
+            font-size: 14px;
+            color: #000000;
+        }
+
+        .map-button {
+    background-color: #b2f1b6; /* Green */
+    border: 2px solid #000; /* Add a 2px black border */
+    color: rgb(0, 0, 0);
+    padding: 12px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: inherit;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* The box shadow */
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.map-button:hover {
+    background-color: #fdfdfd; /* Changes the background color on hover */
+    border-color: #000000; /* Changes the border color on hover */
+}
+    </style>
+
+<style>
+  /* Replaces the original background video */
+  body { background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%) fixed; min-height: 100vh; }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="PopulationDensity.html" class="active">Population Density</a></li>
+            <li><a href="VegetationCover.html">Vegetation Cover</a></li>
+        </ul>
+        <!-- Author tag -->
+        <div class="navbar-logo">
+            <span class="name"> Designed By: <b>VARSHINI</b> </span>
+        </div>
+    </div>
+
+    <header>
+        <h1>Welcome to Population Density Page !</h1>
+    </header>
+    <div class="welcome">
+        <h2><u>Population Density</u></h2>
+        <p> Population density refers to the measure of the number of people living in a specific zone. 
+            This is usually expressed as the number of individuals per unit of land area. 
+            </br> </br>
+            As for Singapore, Population Density refers to the distribution of population across different 
+            regions or neighborhoods<b> In my case, I am required to calculated the Population Density data 
+                for the subzones of Singapore. </b>
+            </b>
+            </br> </br>
+            In order to accomplish this task, <b>OpenStreetMap and Nominatim API</b> is used. 
+            The data source used is from <b><a href="https://www.singstat.gov.sg/find-data/search-by-theme/population/geographic-distribution/latest-data">SingStat.</a></b>
+               <br>
+               <br>
+               </div>
+
+
+
+ 
+    <!--FOR DISPLAYING MAPS-->
+        <div class="map-container">
+            <div id="map1"></div>
+            <h3><u>Normal Map View</u></h3>
+        </div>
+    
+        <div class="map2-container">
+            <div id="map2"></div>
+            <h3><u>Night Map View</u></h3>
+        </div>
+
+</body>
+</html>

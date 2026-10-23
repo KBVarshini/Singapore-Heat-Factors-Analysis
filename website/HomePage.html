@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home Page</title>
+    <style>
+        /* Styling the webpage with CSS */
+        
+        /* Choosing the right font that suits the webpage */
+        /* Making sure the video covers the entire background area without repetition */
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Styling the video container */
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        /* Styling the video element */
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Styling the WELCOME Header */
+        header {
+            padding: 10px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+            margin-top: 20px; /* Increased margin-top to create space */
+            margin-bottom: 20px; /*Creates a gap of between the Welcome header & the Navigation bar. */
+            border-radius: 60px;
+            box-shadow: 0 25px 25px rgba(0, 0, 0, 0.244);
+
+        }
+        
+        /* Styling the Webpage title, WELCOME! */
+        h1 {
+            margin: 0;
+            color: #ffffff;
+            font-family: Verdana, Geneva, 'Tahoma', sans-serif;
+            font-size: 30px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        
+        /* Styling the container for About section.*/
+        .container {
+           max-width: 600px;
+           margin: 20px auto; /* Adjusted margin-top value */
+           padding: 20px;
+           background-color: #f6dbeace;
+           border-radius: 5px;
+           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+           border: 1px solid #000;
+        }
+
+        
+        /* Styling container for the Project Description */
+        .welcome {
+          background-color: rgba(235, 228, 245, 0.774);;
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 30px; 
+          max-width: 900px;
+          margin: 20px auto;
+          padding: 20px;
+          box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+          border: 2px solid #000;
+        }
+
+        
+        /* Styling the font & colour for Project Description & Task Description. */
+        .welcome h2 {
+            color: #5c1f09;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align:center;
+        }
+        
+         /* Styling container for the Task Description */
+         .task-description {
+          background-color: rgba(235, 228, 245, 0.774);
+          padding: 20px;
+          border-radius: 10px;
+          margin-bottom: 30px; 
+          max-width: 900px;
+          margin: 20px auto;
+          padding: 20px;
+          box-shadow: 0 10px 8px rgba(0, 0, 0, 0.1);
+          border: 2px solid #000;
+          
+        }
+
+        
+        /* Styling the font & colour for Project Description & Task Description. */
+        .task-description h2 {
+            color: #5c1f09;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Styling the Project Description & Task Description paragraphs/content. */
+        .welcome p, .task-description p {
+            color: #000000;
+            line-height: 1.8;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        /* Styling the Navigation Bar */
+        .navbar {
+            background-color: #aac2ff9d;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Styling the Navigation Bar unordered list */
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        /* Styling the Navigation bar list items */
+        .navbar li {
+            float: left;
+        }
+        
+        /* Styling the navigation bar links, Home & Population Density. */
+        .navbar li a {
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        /* Styling the navigation bar links on hover */
+        .navbar li a:hover {
+            background-color: #eaa1bb;
+        }
+
+        /* Styling the active link in the navigation bar */
+        .navbar li a.active {
+          background-color: #fefefe;
+          color: #000000;
+        }
+
+        /* Styling the logo in the navigation bar */
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Styling the About section. */
+        .introduction h2 {
+            color: #5c1f09;
+            font-size: 24px;
+            margin-bottom: 7px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        /* Styling the content under About section. */
+        .introduction p {
+            color: #0c0000;
+            line-height: 1.8;
+            font-family: Verdana, Geneva, 'Tahoma', sans-serif;
+            text-align: center;
+        }
+        
+        
+        /* Styling the name text */
+        .name {
+            font-size: 14px;
+            color: #000000;
+        }
+
+        /* Styling the signature section */
+       .signature {
+            text-align: right;
+            margin-top: 30px;
+            margin-right: 15px;
+            color: #000000;
+            font-size: 14px;
+            font-family:cursive;
+        }
+
+    </style>
+<style>
+  /* Replaces the original background video */
+  body { background: linear-gradient(135deg, #1f4037 0%, #99f2c8 100%) fixed; min-height: 100vh; }
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <!--Links for redirection at the navigation bar. 
+            When user clicks on PopulationDensity, they should be redirected to another page to view the map.-->
+            <li><a href="HomePage.html" class="active">Home</a></li>
+            <li><a href="PopulationDensity.html">Population Density</a></li>
+            <li><a href="VegetationCover.html">Vegetation Cover</a></li>
+        </ul>
+        
+        <!-- Author tag -->
+        <div class="navbar-logo">
+            <span class="name"> Designed By: <b>VARSHINI</b> </span>
+        </div>
+    </div>
+
+    <header>
+        <h1>Welcome!</h1>
+       <!-- <img class="vector-art" src="Vector Art.svg" alt="Vector Art"> -->
+
+    </header>
+    
+    <div class="container">
+        <div class="introduction">
+            <h2><u>About</u></h2>
+            <p> I am a Diploma in Information Technology graduate.
+                <br><br>
+                This website was designed by me for my Final Year Project in 2023.
+            </p>
+            
+        </div>
+    </div>
+    
+    <div class="welcome">
+        <h2><u>Project Description</u></h2>
+        <p>
+            The goal of this project is to <b>develop a footfall sensor</b> that can detect foot traffic,
+            specifically for vending machines. We are to make use of data analysis techniques to
+            gain insights from the collected data from the sensor and understand the relationship
+            between foot traffic and its impact on sales in Singapore.
+           
+            <br><br>
+
+            Additionally, there is a need to collect <b>Land Surface Temperature (LST), Weather data</b> using Google Earth Engine, <b>Population Density
+            using OpenStreetMap, Vegetation Cover data</b> using Google Earth Engine, <b>Crime Rates and Hawker Centre data.</b>. 
+            This requires writing the code in both Python and JavaScript, by <b>integrating with AWS</b>.
+            <br><br>
+            All the data collected is to be stored Amazon S3 in AWS. Lastly, all the gathered data is to be visualized, 
+            by <b>creating a user-friendly interface, which is this website,</b> that can be easily understood by non-technical users. It is important to present the data in a clear and organized manner, 
+            ensuring that users can understand it easily.  Based on all the data collected, the client will decide where to sell his sugarcane drinks.
+        </p>
+    </div>
+    
+    <div class="task-description">
+        <h2><u>Task Description</u></h2>
+        <p>Task 1: <b>Gather Population Density data for the subzones of Singapore using OpenStreetMap and Nominatim API.</b>
+            This involves in writing the code to display the data on the map.<b> The script is firstly to be written 
+                in Python and then JavaScript</b>. 
+            The map will then be displayed on this website as part of visuazlization.
+             <br>
+             <br>
+
+             Task 2:<b>Gather Vegetation Cover data all around Singapore, using LandSat 8 satellite, via Google Earth Engine.</b>
+             <b>This involves writing the JavaScript code</b> and then publishing my code as an application onto internet. 
+             In this case, anyone can access the Vegetation Cover map.
+
+
+        </p>
+    </div>
+
+    <script>
+        // Get the current page URL.
+        var currentUrl = window.location.href;
+    
+        // Get the Navigation Bar links
+        var navbarLinks = document.querySelectorAll(".navbar li a");
+    
+        // Iterate over the navbar links
+        navbarLinks.forEach(function(link) {
+            // Check if the link's href matches the current URL.
+            if (link.href === currentUrl) {
+                // Add the "active" class to the link.
+                link.classList.add("active");
+            }
+        });
+    </script>
+</body>
+</html>
