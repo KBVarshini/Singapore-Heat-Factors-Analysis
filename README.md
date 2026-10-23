@@ -1,6 +1,6 @@
-# Singapore Heat Factors Analysis: Vending Machine Site Selection
+<img src="website/images/RP_Logo.png" alt="Republic Polytechnic" width="200"> 
 
-<img src="website/images/RP_Logo.png" alt="Republic Polytechnic" width="220"> 
+# Singapore Heat Factors Analysis: Vending Machine Site Selection
 
 **Project By: Brunda Varshini Katapalli** (group of 4 members)
 
