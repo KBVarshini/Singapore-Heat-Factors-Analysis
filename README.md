@@ -34,6 +34,7 @@ Reads resident population per subzone from [SingStat](https://www.singstat.gov.s
 
 ### 3. Website (HTML, CSS, JavaScript)
 `website/` has 3 pages (Home, Population Density, Vegetation Cover) that present the results for non-technical users. The vegetation page embeds the published Earth Engine app.
+https://kbvarshini.github.io/Singapore-Heat-Factors-Analysis/website/HomePage.html
 
 ### 4. Cloud setup (not included here)
 I set up an AWS EC2 server with a MySQL database for a teammate's footfall data and hosted the pages on S3.
